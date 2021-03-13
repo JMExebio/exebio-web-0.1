@@ -13,13 +13,13 @@ const CSSSliderStyled = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 10% 1fr;
-    grid-row-gap: 2em;
+    grid-row-gap: 1em;
   }
   .solucion {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 10% 1fr;
-    grid-row-gap: 2em;
+    grid-row-gap: 1em;
   }
   .title {
     &-prob {

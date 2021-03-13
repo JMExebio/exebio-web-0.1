@@ -13,6 +13,14 @@ import ExProblema004 from "../components/clases/analisis-figuras/pre/ex-problema
 import ExProblema005 from "../components/clases/analisis-figuras/pre/ex-problema-005";
 import ExProblema006 from "../components/clases/analisis-figuras/pre/ex-problema-006";
 import ExProblema007 from "../components/clases/analisis-figuras/pre/ex-problema-007";
+import ExProblema008 from "../components/clases/analisis-figuras/pre/ex-problema-008";
+import ExProblema009 from "../components/clases/analisis-figuras/pre/ex-problema-009";
+import ExProblema010 from "../components/clases/analisis-figuras/pre/ex-problema-010";
+import ExProblema011 from "../components/clases/analisis-figuras/pre/ex-problema-011";
+import ExProblema012 from "../components/clases/analisis-figuras/pre/ex-problema-012";
+import ExProblema013 from "../components/clases/analisis-figuras/pre/ex-problema-013";
+import ExProblema014 from "../components/clases/analisis-figuras/pre/ex-problema-014";
+import ExProblema015 from "../components/clases/analisis-figuras/pre/ex-problema-015";
 import ExPresentacionA from "../components/clases/analogias-distribuciones/colegio/ex-presentacion-a";
 const EjemploStyled = styled.div`
   width: 100%;
@@ -97,6 +105,30 @@ const ExAnalisisFiguras1 = () => {
             </div>
             <div className="swiper-slide">
               <ExProblema007 />
+            </div>
+            <div className="swiper-slide">
+              <ExProblema008 />
+            </div>
+            <div className="swiper-slide">
+              <ExProblema009 />
+            </div>
+            <div className="swiper-slide">
+              <ExProblema010 />
+            </div>
+            <div className="swiper-slide">
+              <ExProblema011 />
+            </div>
+            <div className="swiper-slide">
+              <ExProblema012 />
+            </div>
+            <div className="swiper-slide">
+              <ExProblema013 />
+            </div>
+            <div className="swiper-slide">
+              <ExProblema014 />
+            </div>
+            <div className="swiper-slide">
+              <ExProblema015 />
             </div>
           </div>
           <div className="swiper-pagination swiper-pagination-h"></div>
