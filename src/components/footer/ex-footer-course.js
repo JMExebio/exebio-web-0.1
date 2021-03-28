@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { useDispatch, useSelector } from "react-redux";
-import getCourses from "../../redux/actions/course-action";
+
 const FooterCourseStyled = styled.div`
   width: 100%;
   margin-bottom: 1em;
@@ -71,13 +70,8 @@ const FooterCourseStyled = styled.div`
     }
   }
 `;
-function ExFooterCourse() {
-  const dispatch = useDispatch();
-  const courses = useSelector((state) => state.Courses);
+function ExFooterCourse({courses}) {
 
-  useEffect(() => {
-    dispatch(getCourses());
-  }, [dispatch]);
   return (
     <FooterCourseStyled>
       <h1 className="footer-title">Cursos</h1>

@@ -70,7 +70,7 @@ const FooterStyled = styled.div`
   }
 `;
 
-function ExFooter() {
+function ExFooter({courses}) {
   return (
     <FooterStyled>
       <ExWrapper>
@@ -92,7 +92,7 @@ function ExFooter() {
             </div>
             <ExLinkRedSocial />
           </div>
-          <ExFooterCourse />
+          <ExFooterCourse courses={courses} />
         </div>
       </ExWrapper>
       <div className="copyright">

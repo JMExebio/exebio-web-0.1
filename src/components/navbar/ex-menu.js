@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import ExLinkNavbar from "./ex-link-navbar";
 import ExMenuIcon from "./ex-icon-menu";
-import getCourses from "../../redux/actions/course-action";
+
 const MenuStyled = styled.div`
   width: 90%;
   .menu {
@@ -44,17 +43,11 @@ const MenuStyled = styled.div`
     margin-right: 40px;
   }
 `;
-function ExMenu() {
+function ExMenu({courses}) {
   const [iconStatus, setIconStatus] = useState("default");
-
-  const dispatch = useDispatch();
-  const courses = useSelector((state) => state.Courses);
   const toggle = () => {
     iconStatus === "default" ? setIconStatus("open") : setIconStatus("default");
   };
-  useEffect(() => {
-    dispatch(getCourses());
-  }, [dispatch]);
   return (
     <MenuStyled toggle={iconStatus}>
       <ul className="menu" onClick={toggle}>

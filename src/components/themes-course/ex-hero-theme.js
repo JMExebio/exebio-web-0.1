@@ -1,9 +1,7 @@
-import React, { useEffect} from "react";
+import React from "react";
 import styled from "styled-components";
 import ExWrapper from "../ex-wrapper";
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import getThemes from "../../redux/actions/themes-action";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 const HeroThemesStyled = styled.section`
   margin: 0;
@@ -32,13 +30,8 @@ const HeroThemesStyled = styled.section`
     }
   }
 `;
-function ExHeroTheme() {
-  const dispatch = useDispatch();
-  const themes = useSelector((state) => state.Themes);
+function ExHeroTheme({themes}) {
   const params = useParams();
-  useEffect(() => {
-    dispatch(getThemes());
-  }, [dispatch]);
   return (
     <HelmetProvider>
       <HeroThemesStyled>

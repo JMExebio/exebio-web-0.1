@@ -36,7 +36,7 @@ const HeaderStyled = styled.header`
     }
   }
 `;
-function ExHeader() {
+function ExHeader({courses}) {
   const [background, setBackground] = useState(true);
   const handleScroll = () => {
     let scrollTop = document.documentElement.scrollTop;
@@ -66,7 +66,7 @@ function ExHeader() {
           </Link>
           <div className="header-menus">
             <ExMenuLogin />
-            <ExMenu />
+            <ExMenu courses={courses} />
           </div>
         </div>
       </ExWrapper>

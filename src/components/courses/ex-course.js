@@ -1,10 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import ExWrapper from "../ex-wrapper";
 import ExCardThemes from "./ex-card-themes";
-import { useDispatch, useSelector } from "react-redux";
-import getCourses from "../../redux/actions/course-action";
-import getThemes from "../../redux/actions/themes-action";
 const CourseStyled = styled.section`
   position: relative;
   width: 100%;
@@ -41,15 +38,7 @@ const CourseStyled = styled.section`
   }
 `;
 
-function ExCourse() {
-  const dispatch = useDispatch();
-  const courses = useSelector((state) => state.Courses);
-  const themes = useSelector((state) => state.Themes);
-  useEffect(() => {
-    dispatch(getCourses());
-    dispatch(getThemes());
-  }, [dispatch]);
-
+function ExCourse({ courses, themes }) {
   return courses.Courses.map((course, index) => (
     <CourseStyled id={`#${course.id}`} color1={course.color1} key={index}>
       <ExWrapper>

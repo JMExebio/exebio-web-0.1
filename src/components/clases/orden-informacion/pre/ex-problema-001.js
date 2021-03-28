@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import anime from "animejs";
-import { ReactComponent as Enunciado } from "../../../../static/img/clases/orden-informacion/0128101.svg";
+import { ReactComponent as Enunciado } from "../../../../static/img/clases/orden-informacion/0128102.svg";
 import { ReactComponent as Problema } from "../../../../static/img/slider/problema.svg";
 import { ReactComponent as Solucion } from "../../../../static/img/slider/solucion.svg";
-import { ReactComponent as Resolucion } from "../../../../static/img/clases/orden-informacion/0128201.svg";
+import { ReactComponent as Resolucion } from "../../../../static/img/clases/orden-informacion/0128202.svg";
 import ExCSSSlider from "../../ex-css-slider.";
 
 
