@@ -83,7 +83,7 @@ function ExHero() {
     <HelmetProvider>
       <HeroStyled>
         <Helmet>
-          <title>Inicio</title>
+          <title>Exebio</title>
         </Helmet>
         <ExWrapper>
           <div className="hero-content">

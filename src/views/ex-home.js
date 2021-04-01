@@ -1,13 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense, lazy } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import ExHeader from "../components/navbar/ex-header";
-import ExHero from "../components/baner/ex-hero";
-import ExCourse from "../components/courses/ex-course";
 import ExScrollHandle from "../components/ex-scroll-handle";
-import ExFooter from "../components/footer/ex-footer";
 import getCourses from "../redux/actions/course-action";
 import getThemes from "../redux/actions/themes-action";
 import ExWhatsapp from "../components/whatsapp/ex-whatsapp";
+import { Helmet, HelmetProvider } from "react-helmet-async";
+const ExHeader = lazy(() => import("../components/navbar/ex-header"));
+const ExHero = lazy(() => import("../components/baner/ex-hero"));
+const ExCourse = lazy(() => import("../components/courses/ex-course"));
+const ExFooter = lazy(() => import("../components/footer/ex-footer"));
 
 function ExHome() {
   const dispatch = useDispatch();
@@ -20,12 +21,19 @@ function ExHome() {
 
   return (
     <>
-      <ExScrollHandle />
-      <ExWhatsapp />
-      <ExHeader courses={courses} />
-      <ExHero />
-      <ExCourse courses={courses} themes={themes}/>
-      <ExFooter courses={courses} />
+      <HelmetProvider>
+        <Helmet>
+          <title>Exebio</title>
+        </Helmet>
+        <Suspense fallback={<p>...</p>}>
+          <ExScrollHandle />
+          <ExWhatsapp />
+          <ExHeader courses={courses} />
+          <ExHero />
+          <ExCourse courses={courses} themes={themes} />
+          <ExFooter courses={courses} />
+        </Suspense>
+      </HelmetProvider>
     </>
   );
 }
