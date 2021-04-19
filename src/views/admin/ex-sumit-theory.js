@@ -3,33 +3,24 @@ import { useDispatch, useSelector } from "react-redux";
 import ExHeader from "../../components/navbar/ex-header";
 import ExScrollHandle from "../../components/ex-scroll-handle";
 import ExFooter from "../../components/footer/ex-footer";
-import getTheory from "../../redux/actions/theory-action";
-import getThemes from "../../redux/actions/themes-action";
-import ExLoader from "../../components/ex-loader";
+import getCourses from "../../redux/actions/course-action";
 import ExTableTheory from "../../components/form/ex-table-theory";
 
 
 function ExSumitTheory() {
   const dispatch = useDispatch();
-  const theory = useSelector((state) => state.Theory);
-  const themes = useSelector((state) => state.Themes);
+  const courses = useSelector((state) => state.Courses);
 
   useEffect(() => {
-    dispatch(getTheory());
-    dispatch(getThemes());
+    dispatch(getCourses());
   }, [dispatch]);
   return (
-    <>
-      {themes.loading && theory.loading && <ExLoader />}
-      {theory.Theory.length >= 1 && (
         <>
           <ExScrollHandle />
-          <ExHeader />
+          <ExHeader courses={courses}/>
           <ExTableTheory />
-          <ExFooter />
+          <ExFooter courses={courses}/>
         </>
-      )}
-    </>
   );
 }
 

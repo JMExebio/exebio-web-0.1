@@ -13,7 +13,7 @@ const HeroStyled = styled.section`
       rgba(20, 20, 21, 0.7) 0%,
       rgba(20, 15, 52, 0.7) 100%
     ),
-    url("https://firebasestorage.googleapis.com/v0/b/exebio-educacion.appspot.com/o/web-exebio%2Fimg-desktop.png?alt=media&token=1cac2c48-53dd-4c3e-acdb-2d770dc97556"),
+    url("./img/img-desktop.png"),
     bottom, left;
   background-repeat: no-repeat;
   background-size: cover;

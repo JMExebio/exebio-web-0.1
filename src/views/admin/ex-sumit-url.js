@@ -3,33 +3,23 @@ import { useDispatch, useSelector } from "react-redux";
 import ExHeader from "../../components/navbar/ex-header";
 import ExScrollHandle from "../../components/ex-scroll-handle";
 import ExFooter from "../../components/footer/ex-footer";
-import getURL from "../../redux/actions/url-action";
-import getThemes from "../../redux/actions/themes-action";
-import ExLoader from "../../components/ex-loader";
 import ExTableURL from "../../components/form/ex-url-table";
-
+import getCourses from "../../redux/actions/course-action";
 
 function ExSumitURL() {
   const dispatch = useDispatch();
-  const url = useSelector((state) => state.URLPres);
-  const themes = useSelector((state) => state.Themes);
+  const courses = useSelector((state) => state.Courses);
 
   useEffect(() => {
-    dispatch(getURL());
-    dispatch(getThemes());
+    dispatch(getCourses());
   }, [dispatch]);
-  return (
-    <>
-      {themes.loading && url.loading && <ExLoader />}
-      {url.url.length >= 0 && (
+  return (  
         <>
           <ExScrollHandle />
-          <ExHeader />
+          <ExHeader courses={courses}/>
           <ExTableURL />
-          <ExFooter />
+          <ExFooter courses={courses}/>
         </>
-      )}
-    </>
   );
 }
 
